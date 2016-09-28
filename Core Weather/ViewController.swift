@@ -84,8 +84,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (action) in
             if let text = alert.textFields!.first!.text {
-                DataService.instance.saveCity(text)
-                self.tableView.reloadData()
+                
+                DataService.instance.checkValidCity(text, completion: { (valid) in
+                    
+                    if valid {
+                        DataService.instance.saveCity(text)
+                        self.tableView.reloadData()
+                    } else {
+                        alert.message = "Invalid city entered. Try again."
+                        alert.textFields!.first!.text = ""
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                })
             }
         }
         
@@ -98,7 +108,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     @IBAction func helpPressed(sender: AnyObject) {
-        let alert = UIAlertController(title: "Welcome to Core Weather!", message: "Press the + button to add a new city. Swipe left on a row to delete.", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Welcome to Core Weather!", message: "Press the + button to add a new city. Swipe left on a row to delete it.", preferredStyle: .Alert)
         
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(okAction)

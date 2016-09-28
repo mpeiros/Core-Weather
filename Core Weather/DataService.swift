@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import UIKit
+import Alamofire
 
 class DataService {
     
@@ -18,6 +19,31 @@ class DataService {
     
     var cities: [City] {
         return _cities
+    }
+    
+    func checkValidCity(name: String, completion: Bool -> ()) {
+        let nameString = name.stringByReplacingOccurrencesOfString(" ", withString: "")
+        let urlString = WEATHER_URL_START + nameString + WEATHER_URL_END
+        
+        let url = NSURL(string: urlString)!
+        
+        Alamofire.request(.GET, url).responseJSON { response in
+            
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                
+                if let statusCode = dict["cod"] as? String {
+                    
+                    if statusCode == "404" {
+                        completion(false)
+                    }
+                    
+                } else {
+                    completion(true)
+                }
+            }
+        }
     }
     
     func saveCity(name: String) {
