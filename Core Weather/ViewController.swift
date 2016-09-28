@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +55,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         performSegueWithIdentifier(SEGUE_SHOW_DETAIL, sender: city)
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch editingStyle {
+        case .Delete:
+            let city = DataService.instance.cities[indexPath.row]
+            DataService.instance.deleteCity(city)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        default:
+            return
+        }
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SEGUE_SHOW_DETAIL {
@@ -83,5 +97,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         presentViewController(alert, animated: true, completion: nil)
     }
 
+    @IBAction func helpPressed(sender: AnyObject) {
+        let alert = UIAlertController(title: "Welcome to Core Weather!", message: "Press the + button to add a new city. Swipe left on a row to delete.", preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(okAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
 

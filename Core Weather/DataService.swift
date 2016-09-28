@@ -39,6 +39,23 @@ class DataService {
         }
     }
     
+    func deleteCity(city: City) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        
+        managedObjectContext.deleteObject(city)
+        
+        do {
+            try managedObjectContext.save()
+            
+            if let index = _cities.indexOf(city) {
+                _cities.removeAtIndex(index)
+            }
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
+    
     func fetchCities() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
