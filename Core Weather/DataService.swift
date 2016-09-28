@@ -24,7 +24,7 @@ class DataService {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
         
-        let entity = NSEntityDescription.entityForName("City", inManagedObjectContext: managedObjectContext)
+        let entity = NSEntityDescription.entityForName(CITY_ENTITY, inManagedObjectContext: managedObjectContext)
         let city = City(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
         
         city.cityName = name
@@ -43,7 +43,7 @@ class DataService {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "City")
+        let fetchRequest = NSFetchRequest(entityName: CITY_ENTITY)
         
         do {
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)

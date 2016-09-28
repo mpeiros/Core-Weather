@@ -18,6 +18,7 @@
 		70524B891D9B06AE00D0BC85 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70524B871D9B06AE00D0BC85 /* City+CoreDataProperties.swift */; };
 		70524B8A1D9B06AE00D0BC85 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70524B881D9B06AE00D0BC85 /* City.swift */; };
 		70524B8E1D9B151200D0BC85 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70524B8D1D9B151200D0BC85 /* DetailVC.swift */; };
+		70524B901D9B2CB200D0BC85 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70524B8F1D9B2CB200D0BC85 /* CityCell.swift */; };
 		D112BE4097F16A7C29CAD301 /* Pods_Core_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CB8B2576795F0C42D27623 /* Pods_Core_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		70524B871D9B06AE00D0BC85 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		70524B881D9B06AE00D0BC85 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		70524B8D1D9B151200D0BC85 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		70524B8F1D9B2CB200D0BC85 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		AAA2F4A65A26AA93B3908291 /* Pods-Core Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Core Weather/Pods-Core Weather.release.xcconfig"; sourceTree = "<group>"; };
 		F7CB8B2576795F0C42D27623 /* Pods_Core_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91BFC2030A5D3CD5FF5A701 /* Pods-Core Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Core Weather/Pods-Core Weather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				703A71571D9AF5E600553A93 /* LaunchScreen.storyboard */,
 				703A714F1D9AF5E600553A93 /* Main.storyboard */,
+				70524B8F1D9B2CB200D0BC85 /* CityCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				TargetAttributes = {
 					703A71471D9AF5E600553A93 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = WRD8ABT3AF;
 					};
 				};
 			};
@@ -273,6 +277,7 @@
 				703A714C1D9AF5E600553A93 /* AppDelegate.swift in Sources */,
 				70524B831D9AF84A00D0BC85 /* Constants.swift in Sources */,
 				70524B891D9B06AE00D0BC85 /* City+CoreDataProperties.swift in Sources */,
+				70524B901D9B2CB200D0BC85 /* CityCell.swift in Sources */,
 				70524B8E1D9B151200D0BC85 /* DetailVC.swift in Sources */,
 				70524B861D9B04B900D0BC85 /* DataService.swift in Sources */,
 				70524B8A1D9B06AE00D0BC85 /* City.swift in Sources */,
@@ -389,6 +394,7 @@
 			baseConfigurationReference = F91BFC2030A5D3CD5FF5A701 /* Pods-Core Weather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Core Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxpeiros.Core-Weather";
@@ -402,6 +408,7 @@
 			baseConfigurationReference = AAA2F4A65A26AA93B3908291 /* Pods-Core Weather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Core Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxpeiros.Core-Weather";

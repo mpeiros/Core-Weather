@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,15 +37,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(REUSE_IDENTIFIER) as? CityCell {
             
             let city = DataService.instance.cities[indexPath.row]
-            
-            cell.textLabel!.text = city.cityName
-            
+            cell.configureCell(city)
             return cell
+            
         } else {
-            return UITableViewCell()
+            return CityCell()
         }
     }
     

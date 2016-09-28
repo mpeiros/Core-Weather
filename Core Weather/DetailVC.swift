@@ -33,7 +33,10 @@ class DetailVC: UIViewController {
     }
     
     func updateUI() {
-        weatherImageView.image = UIImage(named: city.imageName!)
+        if let imgName = city.imageName {
+            weatherImageView.image = UIImage(named: imgName)
+        }
+        
         weatherDescriptionLabel.text = city.weatherDescription
         temperatureLabel.text = city.temperature
         humidityLabel.text = city.humidity

@@ -14,7 +14,10 @@ class City: NSManagedObject {
     
     func downloadWeather(completed: DownloadComplete) {
         
-        let url = NSURL(string: WEATHER_URL)!
+        let cityString = self.cityName!.stringByReplacingOccurrencesOfString(" ", withString: "")
+        let urlString = WEATHER_URL_START + cityString + WEATHER_URL_END
+        
+        let url = NSURL(string: urlString)!
         
         Alamofire.request(.GET, url).responseJSON { response in
             
