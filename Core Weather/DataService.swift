@@ -35,7 +35,7 @@ class DataService {
                 
                 if let statusCode = dict["cod"] as? String {
                     
-                    if statusCode == "404" {
+                    if statusCode == "404" || statusCode == "502" {
                         completion(false)
                     }
                     
