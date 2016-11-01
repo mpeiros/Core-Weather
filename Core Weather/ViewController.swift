@@ -73,6 +73,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let detailVC = segue.destinationViewController as? DetailVC {
                 if let city = sender as? City {
                     detailVC.city = city
+                    
+                    let backItem = UIBarButtonItem()
+                    backItem.title = ""
+                    navigationItem.backBarButtonItem = backItem
                 }
             }
         }
