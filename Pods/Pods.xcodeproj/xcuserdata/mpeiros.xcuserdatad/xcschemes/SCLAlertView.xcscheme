@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B92323453253A98125097798C8CC42A"
-               BuildableName = "Pods_Core_Weather.framework"
-               BlueprintName = "Pods-Core Weather"
+               BlueprintIdentifier = "D60954B6F1DBFD13610DBF6D3A563C55"
+               BuildableName = "SCLAlertView.framework"
+               BlueprintName = "SCLAlertView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B92323453253A98125097798C8CC42A"
-            BuildableName = "Pods_Core_Weather.framework"
-            BlueprintName = "Pods-Core Weather"
+            BlueprintIdentifier = "D60954B6F1DBFD13610DBF6D3A563C55"
+            BuildableName = "SCLAlertView.framework"
+            BlueprintName = "SCLAlertView"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

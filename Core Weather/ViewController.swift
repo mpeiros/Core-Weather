@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -83,41 +84,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func addCity(sender: AnyObject) {
-        let alert = UIAlertController(title: "New City", message: "Add a new city", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler(nil)
+        let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont(name: "HelveticaNeue", size: 18)!,
+            kTextFont: UIFont(name: "HelveticaNeue", size: 12)!,
+            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 12)!,
+            showCloseButton: false
+        )
         
-        let saveAction = UIAlertAction(title: "Save", style: .Default) { (action) in
-            if let text = alert.textFields!.first!.text {
-                
+        let alert = SCLAlertView(appearance: appearance)
+        let textField = alert.addTextField("Enter a city")
+        
+        alert.addButton("Save") {
+            if let text = textField.text {
                 DataService.instance.checkValidCity(text, completion: { (valid) in
-                    
                     if valid {
                         DataService.instance.saveCity(text)
                         self.tableView.reloadData()
+                        SCLAlertView().showSuccess("Success", subTitle: "New city added")
                     } else {
-                        alert.message = "Invalid city entered. Try again."
-                        alert.textFields!.first!.text = ""
-                        self.presentViewController(alert, animated: true, completion: nil)
+                        SCLAlertView().showError("Error adding new city", subTitle: "Invalid city entered. Please try again.")
                     }
                 })
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        alert.addButton("Cancel") {
+            alert.hideView()
+        }
         
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        presentViewController(alert, animated: true, completion: nil)
+        alert.showEdit("New City", subTitle: "Add a new city")
     }
 
     @IBAction func helpPressed(sender: AnyObject) {
-        let alert = UIAlertController(title: "Welcome to Core Weather!", message: "Press the + button to add a new city. Swipe left on a row to delete it.", preferredStyle: .Alert)
+        let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont(name: "HelveticaNeue", size: 18)!,
+            kTextFont: UIFont(name: "HelveticaNeue", size: 12)!,
+            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 12)!
+        )
         
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alert.addAction(okAction)
-        
-        presentViewController(alert, animated: true, completion: nil)
+        let alert = SCLAlertView(appearance: appearance)
+        alert.showInfo("Welcome to Core Weather!", subTitle: "Press the + button to add a new city. Swipe left on a row to delete it.")
     }
     
 }

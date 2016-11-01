@@ -7,5 +7,6 @@ target 'Core Weather' do
 
   # Pods for Core Weather
   pod 'Alamofire', '~> 3.4'
+  pod 'SCLAlertView'
 
 end
