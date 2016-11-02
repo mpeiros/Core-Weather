@@ -89,19 +89,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q06-Cs-SFL" customClass="GradientView" customModule="Core_Weather" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CxW-G3-0Fp">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPa-MR-KF3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EPa-MR-KF3">
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-DN-geY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-DN-geY">
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2o-Nd-Uen">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h2o-Nd-Uen">
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -148,7 +151,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myT-wt-Mlm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="myT-wt-Mlm">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Ofi-Ow-Z3P"/>
                                     <constraint firstAttribute="height" constant="40" id="Vq4-iw-nXn"/>
@@ -165,20 +168,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="myT-wt-Mlm" firstAttribute="leading" secondItem="Iej-Vz-5rR" secondAttribute="leadingMargin" constant="50" id="6dm-vZ-ChD"/>
+                            <constraint firstAttribute="trailing" secondItem="q06-Cs-SFL" secondAttribute="trailing" id="2tV-kr-Mub"/>
+                            <constraint firstItem="myT-wt-Mlm" firstAttribute="leading" secondItem="Iej-Vz-5rR" secondAttribute="leadingMargin" id="6dm-vZ-ChD"/>
                             <constraint firstItem="CxW-G3-0Fp" firstAttribute="leading" secondItem="cBG-7b-At5" secondAttribute="trailing" constant="10" id="8yc-RP-3jH"/>
                             <constraint firstItem="myT-wt-Mlm" firstAttribute="centerY" secondItem="Iej-Vz-5rR" secondAttribute="centerY" id="C7A-co-dde"/>
                             <constraint firstItem="4U4-uf-6K1" firstAttribute="centerX" secondItem="Iej-Vz-5rR" secondAttribute="centerX" id="Cg0-4N-kcu"/>
                             <constraint firstItem="CxW-G3-0Fp" firstAttribute="top" secondItem="myT-wt-Mlm" secondAttribute="bottom" constant="15" id="DcM-SZ-dCn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="myT-wt-Mlm" secondAttribute="trailing" constant="50" id="JZM-bI-hgp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="myT-wt-Mlm" secondAttribute="trailing" id="JZM-bI-hgp"/>
                             <constraint firstItem="2jZ-yk-eMZ" firstAttribute="bottom" secondItem="CxW-G3-0Fp" secondAttribute="bottom" id="JtW-Qc-VRC"/>
                             <constraint firstItem="CxW-G3-0Fp" firstAttribute="top" secondItem="cBG-7b-At5" secondAttribute="top" id="JuR-ht-TNc"/>
                             <constraint firstItem="mMm-Na-Eb7" firstAttribute="top" secondItem="CxW-G3-0Fp" secondAttribute="bottom" constant="20" id="M51-fV-IRh"/>
                             <constraint firstItem="CxW-G3-0Fp" firstAttribute="centerX" secondItem="Iej-Vz-5rR" secondAttribute="centerX" id="UEQ-wR-nhQ"/>
+                            <constraint firstItem="q06-Cs-SFL" firstAttribute="leading" secondItem="Iej-Vz-5rR" secondAttribute="leading" id="Ygg-WI-3PK"/>
                             <constraint firstItem="myT-wt-Mlm" firstAttribute="centerX" secondItem="Iej-Vz-5rR" secondAttribute="centerX" id="bhW-3F-EjH"/>
+                            <constraint firstItem="mMm-Na-Eb7" firstAttribute="top" secondItem="q06-Cs-SFL" secondAttribute="bottom" id="fj5-3a-3r6"/>
                             <constraint firstItem="2jZ-yk-eMZ" firstAttribute="top" secondItem="CxW-G3-0Fp" secondAttribute="top" id="q2M-h0-NVA"/>
                             <constraint firstItem="myT-wt-Mlm" firstAttribute="top" secondItem="4U4-uf-6K1" secondAttribute="bottom" constant="15" id="t70-ni-Xd1"/>
                             <constraint firstItem="4U4-uf-6K1" firstAttribute="top" secondItem="enD-fS-dFx" secondAttribute="bottom" constant="8" id="uHL-As-1pG"/>
+                            <constraint firstItem="q06-Cs-SFL" firstAttribute="top" secondItem="enD-fS-dFx" secondAttribute="bottom" id="yla-iW-t6H"/>
                             <constraint firstItem="2jZ-yk-eMZ" firstAttribute="leading" secondItem="CxW-G3-0Fp" secondAttribute="trailing" constant="10" id="ypb-ES-dhn"/>
                             <constraint firstItem="CxW-G3-0Fp" firstAttribute="bottom" secondItem="cBG-7b-At5" secondAttribute="bottom" id="zbD-to-gaH"/>
                         </constraints>
@@ -193,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cK-2X-V5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="467"/>
+            <point key="canvasLocation" x="2117.5999999999999" y="466.41679160419795"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n4P-q8-IYN">
@@ -204,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

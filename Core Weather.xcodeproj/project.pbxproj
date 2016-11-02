@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701614451DCA87B200597B81 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701614441DCA87B200597B81 /* GradientView.swift */; };
 		703A714C1D9AF5E600553A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A714B1D9AF5E600553A93 /* AppDelegate.swift */; };
 		703A714E1D9AF5E600553A93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A714D1D9AF5E600553A93 /* ViewController.swift */; };
 		703A71511D9AF5E600553A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703A714F1D9AF5E600553A93 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		701614441DCA87B200597B81 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		703A71481D9AF5E600553A93 /* Core Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		703A714B1D9AF5E600553A93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		703A714D1D9AF5E600553A93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				703A71571D9AF5E600553A93 /* LaunchScreen.storyboard */,
 				703A714F1D9AF5E600553A93 /* Main.storyboard */,
 				70524B8F1D9B2CB200D0BC85 /* CityCell.swift */,
+				701614441DCA87B200597B81 /* GradientView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				703A71541D9AF5E600553A93 /* Core_Weather.xcdatamodeld in Sources */,
 				703A714E1D9AF5E600553A93 /* ViewController.swift in Sources */,
+				701614451DCA87B200597B81 /* GradientView.swift in Sources */,
 				703A714C1D9AF5E600553A93 /* AppDelegate.swift in Sources */,
 				70524B831D9AF84A00D0BC85 /* Constants.swift in Sources */,
 				70524B891D9B06AE00D0BC85 /* City+CoreDataProperties.swift in Sources */,
