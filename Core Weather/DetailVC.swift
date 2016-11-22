@@ -15,6 +15,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var city: City!
 
@@ -22,6 +23,8 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         
         title = city.cityName
+        
+        activityIndicator.startAnimating()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,18 +32,38 @@ class DetailVC: UIViewController {
         
         city.downloadWeather {
             self.updateUI()
+            self.activityIndicator.stopAnimating()
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        resetUI()
     }
     
     func updateUI() {
         if let imgName = city.imageName {
             weatherImageView.image = UIImage(named: imgName)
+            weatherImageView.hidden = false
         }
         
         weatherDescriptionLabel.text = city.weatherDescription
+        weatherDescriptionLabel.hidden = false
         temperatureLabel.text = city.temperature
+        temperatureLabel.hidden = false
         humidityLabel.text = city.humidity
+        humidityLabel.hidden = false
         windSpeedLabel.text = city.windSpeed
+        windSpeedLabel.hidden = false
+    }
+    
+    func resetUI() {
+        weatherImageView.hidden = true
+        weatherDescriptionLabel.hidden = true
+        temperatureLabel.hidden = true
+        humidityLabel.hidden = true
+        windSpeedLabel.hidden = true
     }
     
 }
